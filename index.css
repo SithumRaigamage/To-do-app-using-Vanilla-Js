@@ -3,35 +3,181 @@ body {
     margin: 20px;
 }
 
+/* Center the heading */
+.main-heading {
+    text-align: center; /* Center the text horizontally */
+    margin: 0;          /* Remove default margin */
+    padding: 20px;      /* Add some padding for spacing */
+    font-size: 2.5em;   /* Adjust the font size */
+    color: #333;        /* Set text color */
+}
+
 /* Task Section with Flex Containers */
 .task {
     padding: 20px;
     background-color: #e8eaf6; /* Light background for contrast */
-  }
-  
-  .flex-container {
+}
+
+/* Flex container styling */
+.flex-container {
     display: flex;
-    gap: 10px;                       /* Space between containers */
-    justify-content: space-around;   /* Distribute space evenly */
-    align-items: center;             /* Center-align items vertically */
-  }
-  
-  .flex-item {
-    flex: 1;                         /* Flex items to grow/shrink equally */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;   /* Allow the items to wrap on smaller screens */
+}
+
+/* Flex item styling */
+.flex-item {
+    flex: 1 1 30%; /* Items will take up 30% of the container, but can grow and shrink */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;  /* Rounded corners for the items */
+    min-width: 220px;     /* Set a minimum width for each flex item */
+}
+
+/* Icon styling */
+.flex-item i {
+    font-size: 1.5em;  /* Increase icon size */
+    color: rgb(0, 0, 0);
+}
+
+/* Modern Input styling */
+.flex-item input {
+    flex: 1;
+    padding: 10px 10px;
+    width: 15px;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+    min-height: 30px;
+}
+
+.flex-item textarea {
+    flex: 1;
+    padding: 10px 10px;
+    font-size: 1.2em;
+    width: 15px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+    min-height: 30px;
+}
+
+
+/* Styling for the select dropdown */
+.flex-item select {
+    flex: 1;
+    padding: 10px 10px;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    min-height: 30px;
+}
+
+/* Textarea specific styling */
+.flex-item textarea {
+    resize: none;  /* Prevent manual resizing */
+    overflow-y: hidden;  /* Prevent scrollbar */
+}
+
+/* Focus styling for inputs, textarea, and select */
+.flex-item input:focus,
+.flex-item select:focus,
+.flex-item textarea:focus {
+    outline: none;
+    border-color: #171a18;
+    box-shadow: 0 0 10px rgba(46, 48, 46, 0.6);
+}
+
+.add-button {
+    padding: 10px 60px;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    min-height: 30px;
+    cursor: pointer;
+
+}
+
+/* Styling for the table container */
+.table-container {
+    margin-top: 40px; /* Adds space after the first section */
     padding: 20px;
-    background-color: #4CAF50;       /* Green background for each item */
-    color: white;
-    text-align: center;
-    border-radius: 5px;              /* Rounded corners */
-  }
-  
-  /* Table Container Section */
-  .table-container {
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 10px;
+}
+
+/* Flex container for the table */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;  /* Allows horizontal scrolling if table overflows */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Removes spacing between cells */
     margin-top: 20px;
-    padding: 20px;
-    background-color: #f5f5f5;       /* Light gray background */
-    border: 1px solid #ddd;          /* Border for distinction */
-    border-radius: 5px;
-    min-height: 150px;               /* Minimum height for visual space */
-  }
-  
+}
+
+/* Table header styling */
+th {
+    background-color: #e8eaf6;
+    color: rgb(0, 0, 0);
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+/* Table data styling */
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light border between rows */
+}
+
+/* Even row background color */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternating row colors */
+}
+
+/* Hover effect for rows */
+tr:hover {
+    background-color: #ddd; /* Highlight rows on hover */
+}
+
+/* Responsive table styling */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+    
+    th, td {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+}
+
+
+/* Optional: Add responsive design for smaller screens */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

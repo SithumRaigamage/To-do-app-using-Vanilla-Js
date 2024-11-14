@@ -8,19 +8,91 @@
 </head>
 <body>
 
+    <h1 class="main-heading">To Do Application</h1>
+
     <section class="task">
         <div class="flex-container">
-            <div class="flex-item">Container 1</div>
-            <div class="flex-item">Container 2</div>
-            <div class="flex-item">Container 3</div>
-            <div class="flex-item">Container 4</div>
-            <div class="flex-item">Container 5</div>
-          </div>          
+            <div class="flex-item">
+                <i class="fas fa-tasks"></i> <!-- Task icon -->
+                <input type="text" placeholder="Task">
+            </div>
+            <div class="flex-item">
+                <i class="fas fa-file-alt"></i> <!-- Description icon -->
+                <textarea placeholder="Description"></textarea>
+            </div>
+            <div class="flex-item">
+                <i class="fas fa-hourglass-half"></i> <!-- Duration icon -->
+                <select>
+                    <option value="">No option selected</option>
+                    <option value="1">1 hour</option>
+                    <option value="2">2 hours</option>
+                    <option value="3">3 hours</option>
+                    <option value="4">4 hours</option>
+                    <option value="5">5 hours</option>
+                    <option value="6">6 hours</option>
+                    <option value="7">7 hours</option>
+                    <option value="8">8 hours</option>
+                    <option value="9">9 hours</option>
+                </select>
+            </div>
+            <div class="flex-item">
+                <i class="fas fa-calendar-day"></i> <!-- Start Date icon -->
+                <input type="date" placeholder="Start Date">
+            </div>
+            <div class="flex-item">
+                <i class="fas fa-calendar-check"></i> <!-- End Date icon -->
+                <input type="date" placeholder="End Date">
+            </div>
+        </div> 
+        
+        <div class="flex-container">
+            <button class="add-button" onclick="handleAddClick()">Add</button>
+        </div>
     </section>
+    
 
     <section class="table-container">
-
-    </section>
+        <div class="flex-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Time Allocation</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Task 1</td>
+                        <td>Complete project documentation</td>
+                        <td>2 hours</td>
+                        <td>2024-11-15</td>
+                        <td>2024-11-15</td>
+                        <td><button>Edit</button> <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Task 2</td>
+                        <td>Develop feature XYZ</td>
+                        <td>5 hours</td>
+                        <td>2024-11-16</td>
+                        <td>2024-11-16</td>
+                        <td><button>Edit</button> <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Task 3</td>
+                        <td>Fix bug in the login system</td>
+                        <td>3 hours</td>
+                        <td>2024-11-17</td>
+                        <td>2024-11-17</td>
+                        <td><button>Edit</button> <button>Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="script.js"></script>

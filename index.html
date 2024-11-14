@@ -14,15 +14,15 @@
         <div class="flex-container">
             <div class="flex-item">
                 <i class="fas fa-tasks"></i> <!-- Task icon -->
-                <input type="text" placeholder="Task">
+                <input id="task" type="text" placeholder="Task">
             </div>
             <div class="flex-item">
                 <i class="fas fa-file-alt"></i> <!-- Description icon -->
-                <textarea placeholder="Description"></textarea>
+                <textarea id="description" placeholder="Description"></textarea>
             </div>
             <div class="flex-item">
                 <i class="fas fa-hourglass-half"></i> <!-- Duration icon -->
-                <select>
+                <select id="duration">
                     <option value="">No option selected</option>
                     <option value="1">1 hour</option>
                     <option value="2">2 hours</option>
@@ -37,11 +37,11 @@
             </div>
             <div class="flex-item">
                 <i class="fas fa-calendar-day"></i> <!-- Start Date icon -->
-                <input type="date" placeholder="Start Date">
+                <input id="start-date" type="date" placeholder="Start Date">
             </div>
             <div class="flex-item">
                 <i class="fas fa-calendar-check"></i> <!-- End Date icon -->
-                <input type="date" placeholder="End Date">
+                <input id="end-date" type="date" placeholder="End Date">
             </div>
         </div> 
         
@@ -65,30 +65,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Task 1</td>
-                        <td>Complete project documentation</td>
-                        <td>2 hours</td>
-                        <td>2024-11-15</td>
-                        <td>2024-11-15</td>
-                        <td><button>Edit</button> <button>Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Task 2</td>
-                        <td>Develop feature XYZ</td>
-                        <td>5 hours</td>
-                        <td>2024-11-16</td>
-                        <td>2024-11-16</td>
-                        <td><button>Edit</button> <button>Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Task 3</td>
-                        <td>Fix bug in the login system</td>
-                        <td>3 hours</td>
-                        <td>2024-11-17</td>
-                        <td>2024-11-17</td>
-                        <td><button>Edit</button> <button>Delete</button></td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -98,3 +75,28 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- <tr>
+    <td>Task 1</td>
+    <td>Complete project documentation</td>
+    <td>2 hours</td>
+    <td>2024-11-15</td>
+    <td>2024-11-15</td>
+    <td><button>Edit</button> <button>Delete</button></td>
+</tr>
+<tr>
+    <td>Task 2</td>
+    <td>Develop feature XYZ</td>
+    <td>5 hours</td>
+    <td>2024-11-16</td>
+    <td>2024-11-16</td>
+    <td><button>Edit</button> <button>Delete</button></td>
+</tr>
+<tr>
+    <td>Task 3</td>
+    <td>Fix bug in the login system</td>
+    <td>3 hours</td>
+    <td>2024-11-17</td>
+    <td>2024-11-17</td>
+    <td><button>Edit</button> <button>Delete</button></td>
+</tr> -->

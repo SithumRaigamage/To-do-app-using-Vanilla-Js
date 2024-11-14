@@ -10,13 +10,41 @@
 
     <section class="task">
         <div class="flex-container">
-            <div class="flex-item">Container 1</div>
-            <div class="flex-item">Container 2</div>
-            <div class="flex-item">Container 3</div>
-            <div class="flex-item">Container 4</div>
-            <div class="flex-item">Container 5</div>
-          </div>          
+            <div class="flex-item">
+                <i class="fas fa-tasks"></i> <!-- Task icon -->
+                <input type="text" placeholder="Task">
+            </div>
+            <div class="flex-item">
+                <i class="fas fa-file-alt"></i> <!-- Description icon -->
+                <textarea placeholder="Description"></textarea>
+            </div>
+            <div class="flex-item">
+                <i class="fas fa-hourglass-half"></i> <!-- Duration icon -->
+                <select>
+                    <option value="1">1 hour</option>
+                    <option value="2">2 hours</option>
+                    <option value="3">3 hours</option>
+                    <option value="4">4 hours</option>
+                    <option value="5">5 hours</option>
+                </select>
+            </div>
+            <div class="flex-item">
+                <i class="fas fa-calendar-day"></i> <!-- Start Date icon -->
+                <input type="date" placeholder="Start Date">
+            </div>
+            <div class="flex-item">
+                <i class="fas fa-calendar-check"></i> <!-- End Date icon -->
+                <input type="date" placeholder="End Date">
+            </div>
+        </div> 
+        
+        <div class="flex-container">
+
+            <button class="add-button" onclick="handleAddClick()">Add</button>
+
+        </div>
     </section>
+    
 
     <section class="table-container">
 

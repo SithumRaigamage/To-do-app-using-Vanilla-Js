@@ -7,31 +7,90 @@ body {
 .task {
     padding: 20px;
     background-color: #e8eaf6; /* Light background for contrast */
-  }
-  
-  .flex-container {
+}
+
+/* Flex container styling */
+.flex-container {
     display: flex;
-    gap: 10px;                       /* Space between containers */
-    justify-content: space-around;   /* Distribute space evenly */
-    align-items: center;             /* Center-align items vertically */
-  }
-  
-  .flex-item {
-    flex: 1;                         /* Flex items to grow/shrink equally */
-    padding: 20px;
-    background-color: #4CAF50;       /* Green background for each item */
-    color: white;
-    text-align: center;
-    border-radius: 5px;              /* Rounded corners */
-  }
-  
-  /* Table Container Section */
-  .table-container {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f5f5f5;       /* Light gray background */
-    border: 1px solid #ddd;          /* Border for distinction */
-    border-radius: 5px;
-    min-height: 150px;               /* Minimum height for visual space */
-  }
-  
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;   /* Allow the items to wrap on smaller screens */
+}
+
+/* Flex item styling */
+.flex-item {
+    flex: 1 1 30%; /* Items will take up 30% of the container, but can grow and shrink */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;  /* Rounded corners for the items */
+    min-width: 220px;     /* Set a minimum width for each flex item */
+}
+
+/* Icon styling */
+.flex-item i {
+    font-size: 1.5em;  /* Increase icon size */
+    color: rgb(0, 0, 0);
+}
+
+/* Modern Input styling */
+.flex-item input, .flex-item textarea {
+    flex: 1;
+    padding: 10px 10px;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+    min-height: 30px;
+}
+
+/* Styling for the select dropdown */
+.flex-item select {
+    flex: 1;
+    padding: 10px 10px;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    min-height: 30px;
+}
+
+/* Textarea specific styling */
+.flex-item textarea {
+    resize: none;  /* Prevent manual resizing */
+    overflow-y: hidden;  /* Prevent scrollbar */
+}
+
+/* Focus styling for inputs, textarea, and select */
+.flex-item input:focus,
+.flex-item select:focus,
+.flex-item textarea:focus {
+    outline: none;
+    border-color: #171a18;
+    box-shadow: 0 0 10px rgba(46, 48, 46, 0.6);
+}
+
+.add-button {
+    padding: 10px 60px;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    min-height: 30px;
+
+}
+
+/* Optional: Add responsive design for smaller screens */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

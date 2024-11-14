@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Task Section with Flex Containers */
+.task {
+    padding: 20px;
+    background-color: #e8eaf6; /* Light background for contrast */
+  }
+  
+  .flex-container {
+    display: flex;
+    gap: 10px;                       /* Space between containers */
+    justify-content: space-around;   /* Distribute space evenly */
+    align-items: center;             /* Center-align items vertically */
+  }
+  
+  .flex-item {
+    flex: 1;                         /* Flex items to grow/shrink equally */
+    padding: 20px;
+    background-color: #4CAF50;       /* Green background for each item */
+    color: white;
+    text-align: center;
+    border-radius: 5px;              /* Rounded corners */
+  }
+  
+  /* Table Container Section */
+  .table-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;       /* Light gray background */
+    border: 1px solid #ddd;          /* Border for distinction */
+    border-radius: 5px;
+    min-height: 150px;               /* Minimum height for visual space */
+  }
+  

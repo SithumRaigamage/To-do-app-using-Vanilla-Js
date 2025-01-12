@@ -1,195 +1,133 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, table, th, td {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Center the heading */
+/* Main Heading */
 .main-heading {
-    text-align: center; /* Center the text horizontally */
-    margin: 0;          /* Remove default margin */
-    padding: 20px;      /* Add some padding for spacing */
-    font-size: 2.5em;   /* Adjust the font size */
-    color: #333;        /* Set text color */
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    color: #4A90E2;
 }
 
-/* Task Section with Flex Containers */
+/* Task Section */
 .task {
+    background: #fff;
     padding: 20px;
-    background-color: #e8eaf6; /* Light background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 700px;
 }
 
-/* Flex container styling */
+/* Flex container */
 .flex-container {
+    margin-top: 15px;
     display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;   /* Allow the items to wrap on smaller screens */
-}
-
-/* Flex item styling */
-.flex-item {
-    flex: 1 1 30%; /* Items will take up 30% of the container, but can grow and shrink */
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 15px;
-    padding: 15px;
-    color: rgb(0, 0, 0);
-    border-radius: 10px;  /* Rounded corners for the items */
-    min-width: 220px;     /* Set a minimum width for each flex item */
+    justify-content: center; /* Center content horizontally */
 }
 
-/* Icon styling */
-.flex-item i {
-    font-size: 1.5em;  /* Increase icon size */
-    color: rgb(0, 0, 0);
-}
-
-/* Modern Input styling */
-.flex-item input {
-    flex: 1;
-    padding: 10px 10px;
-    width: 15px;
-    font-size: 1.2em;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    background-color: #fff;
-    color: #333;
-    transition: all 0.3s ease;
-    min-height: 30px;
-}
-
-.flex-item textarea {
-    flex: 1;
-    padding: 10px 10px;
-    font-size: 1.2em;
-    width: 15px;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    background-color: #fff;
-    color: #333;
-    transition: all 0.3s ease;
-    min-height: 30px;
-}
-
-
-/* Styling for the select dropdown */
-.flex-item select {
-    flex: 1;
-    padding: 10px 10px;
-    font-size: 1.2em;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    background-color: #fff;
-    color: #333;
-    min-height: 30px;
-}
-
-/* Textarea specific styling */
-.flex-item textarea {
-    resize: none;  /* Prevent manual resizing */
-    overflow-y: hidden;  /* Prevent scrollbar */
-}
-
-/* Focus styling for inputs, textarea, and select */
-.flex-item input:focus,
-.flex-item select:focus,
-.flex-item textarea:focus {
-    outline: none;
-    border-color: #171a18;
-    box-shadow: 0 0 10px rgba(46, 48, 46, 0.6);
-}
-
-.add-button {
-    padding: 10px 60px;
-    font-size: 1.2em;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    background-color: #fff;
-    color: #333;
-    min-height: 30px;
-    cursor: pointer;
-
-}
-
-/* Styling for the table container */
-.table-container {
-    margin-top: 40px; /* Adds space after the first section */
-    padding: 20px;
-    background-color: #f9f9f9; /* Light background for contrast */
-    border-radius: 10px;
-}
-
-/* Flex container for the table */
-.flex-container {
+/* Flex item */
+.flex-item {
+    flex: 1 1 45%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow-x: auto;  /* Allows horizontal scrolling if table overflows */
+    position: relative;
 }
 
-/* Table styling */
+.flex-item i {
+    color: #4A90E2;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.flex-item input,
+.flex-item textarea,
+.flex-item select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Adjust for textarea */
+.flex-item textarea {
+    resize: none;
+    height: 70px;
+}
+
+/* Button Styling */
+.add-button {
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #357ABD;
+}
+
+/* Table Styling */
+.table-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
 table {
     width: 100%;
-    border-collapse: collapse; /* Removes spacing between cells */
-    margin-top: 20px;
+    border-collapse: collapse;
 }
 
-/* Table header styling */
-th {
-    background-color: #e8eaf6;
-    color: rgb(0, 0, 0);
-    padding: 12px 15px;
+thead tr {
+    background-color: #4A90E2;
+    color: white;
     text-align: left;
-    font-size: 1.1em;
 }
 
-/* Table data styling */
-td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd; /* Light border between rows */
+th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
-/* Even row background color */
-tr:nth-child(even) {
-    background-color: #f2f2f2; /* Alternating row colors */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-/* Hover effect for rows */
-tr:hover {
-    background-color: #ddd; /* Highlight rows on hover */
+tbody tr:hover {
+    background-color: #f1f1f1;
 }
 
-button {
-    background: none; /* Remove the background */
-    border: none;     /* Remove the border */
-    cursor: pointer;  /* Change cursor to indicate it's clickable */
-    padding: 0;        /* Remove any padding */
-    font-size: 1em;    /* Set font size for the icon */
-}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .flex-item {
+        flex: 1 1 100%;
+    }
 
-button i {
-    font-size: 1.2em; /* Adjust the size of the icon */
-}
-
-/* Responsive table styling */
-@media (max-width: 768px) {
-    table {
+    .add-button {
         width: 100%;
-        font-size: 0.9em; /* Adjust font size for smaller screens */
-    }
-    
-    th, td {
-        padding: 10px; /* Reduce padding on smaller screens */
-    }
-}
-
-
-/* Optional: Add responsive design for smaller screens */
-@media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column;
-        gap: 15px;
     }
 }

@@ -1,11 +1,11 @@
 // Handle the 'Add' button click event
 function handleAddClick() {
     // Get the values from the input fields
-    const task = document.getElementById('task').value;
-    const description = document.getElementById('description').value;
-    const duration = document.getElementById('duration').value;
-    const startDate = document.getElementById('start-date').value;
-    const endDate = document.getElementById('end-date').value;
+    const task = $('#task').val();
+    const description = $('#description').val();
+    const duration = $('#duration').val();
+    const startDate = $('#start-date').val();
+    const endDate = $('#end-date').val();
 
     // Check if all fields are filled in before adding the task
     if (!task || !description || !duration || !startDate || !endDate) {
@@ -14,54 +14,52 @@ function handleAddClick() {
     }
 
     // Create a new table row with the input data
-    const newRow = document.createElement('tr');
-
-    newRow.innerHTML = `
-        <td>${task}</td>
-        <td>${description}</td>
-        <td>${duration} hours</td>
-        <td>${startDate}</td>
-        <td>${endDate}</td>
-        <td>
-            <button onclick="editTask(this)">
-                <i class="fas fa-edit"></i> <!-- Edit icon -->
-            </button>
-            <button onclick="deleteTask(this)">
-                <i class="fas fa-trash-alt"></i> <!-- Delete icon -->
-            </button>
-        </td>
-    `;
+    const newRow = $(`
+        <tr>
+            <td>${task}</td>
+            <td>${description}</td>
+            <td>${duration} hours</td>
+            <td>${startDate}</td>
+            <td>${endDate}</td>
+            <td>
+                <button class="edit-btn">
+                    <i class="fas fa-edit"></i> <!-- Edit icon -->
+                </button>
+                <button class="delete-btn">
+                    <i class="fas fa-trash-alt"></i> <!-- Delete icon -->
+                </button>
+            </td>
+        </tr>
+    `);
 
     // Append the new row to the table body
-    const tableBody = document.querySelector('.table-container tbody');
-    tableBody.appendChild(newRow);
+    $('.table-container tbody').append(newRow);
 
     // Clear the input fields after adding the task
-    document.getElementById('task').value = '';
-    document.getElementById('description').value = '';
-    document.getElementById('duration').value = '';
-    document.getElementById('start-date').value = '';
-    document.getElementById('end-date').value = '';
+    $('#task').val('');
+    $('#description').val('');
+    $('#duration').val('');
+    $('#start-date').val('');
+    $('#end-date').val('');
 }
 
 // Edit the task when 'Edit' button is clicked
-function editTask(button) {
-    const row = button.closest('tr');
-    const cells = row.querySelectorAll('td');
+$(document).on('click', '.edit-btn', function () {
+    const row = $(this).closest('tr');
+    const cells = row.children('td');
 
     // Set the values back to the input fields
-    document.getElementById('task').value = cells[0].textContent;
-    document.getElementById('description').value = cells[1].textContent;
-    document.getElementById('duration').value = cells[2].textContent.replace(" hours", "");
-    document.getElementById('start-date').value = cells[3].textContent;
-    document.getElementById('end-date').value = cells[4].textContent;
+    $('#task').val(cells.eq(0).text());
+    $('#description').val(cells.eq(1).text());
+    $('#duration').val(cells.eq(2).text().replace(" hours", ""));
+    $('#start-date').val(cells.eq(3).text());
+    $('#end-date').val(cells.eq(4).text());
 
     // Remove the row
     row.remove();
-}
+});
 
 // Delete the task when 'Delete' button is clicked
-function deleteTask(button) {
-    const row = button.closest('tr');
-    row.remove();
-}
+$(document).on('click', '.delete-btn', function () {
+    $(this).closest('tr').remove();
+});
